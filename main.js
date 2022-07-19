@@ -28,7 +28,7 @@ function laPizza () {
             precioh4.innerHTML = `Su precio es ${pizza.Precio}`;
         }
     })
-    if (respuestaAlBuscar > 7) {
+    if (respuestaAlBuscar > 7 ||respuestaAlBuscar < 1) {
         nombreh2.innerHTML = `No hay pizza con este ID <br>`;
     }
 }

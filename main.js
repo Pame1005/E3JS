@@ -15,12 +15,12 @@ let pizzas = [
 ]
 
 
-buscar.addEventListener ('click', laPizza);
-
-function laPizza () {
+buscar.addEventListener ('click', (e) =>{
+    e.preventDefault();
     
     nombreh2.innerHTML = "";
     precioh4.innerHTML = "";
+
     const respuestaAlBuscar = idPizza.value;
     pizzas.forEach ((pizza) => {
         if (pizza.id == respuestaAlBuscar) {
@@ -31,4 +31,8 @@ function laPizza () {
     if (respuestaAlBuscar > 7 ||respuestaAlBuscar < 1) {
         nombreh2.innerHTML = `No hay pizza con este ID <br>`;
     }
-}
+    setTimeout(() => {
+        nombreh2.remove()
+        precioh4.remove()
+    }, 1500)
+})
